@@ -50,7 +50,7 @@ Var a, b, c, s, p, h:real;
     Write('Nhap canh ben 1 neu khong co nhap = 0:');readln(a);
     Write('Nhap canh ben 2 neu khong co nhap = 0:');readln(b);
     Write('Nhap canh day:');readln(c);
-    write('Nhap duong cao:'); readln(h);
+    write('Nhap duong cao neu khong co nhap = 0:'); readln(h);
     If ((a+b)>c)and((b+c)>a)and((a+c)>b) then
     Begin
          p:=(a+b+c)/2;
