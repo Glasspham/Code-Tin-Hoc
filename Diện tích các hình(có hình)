@@ -8,8 +8,8 @@ Procedure HV;
       For j:=1 to 1 do begin
       For i:=1 to 5 do begin write('.',' '); delay(300); end;
       Writeln;
-      For i:=1 to 3 do writeln('. . . . .');
-      For i:=1 to 5 do write('.',' ');
+      For i:=1 to 3 do writeln('. . . . .');delay(300); 
+      For i:=1 to 5 do write('.',' ');delay(300); 
       Writeln;
       Delay(500);
       end;
@@ -20,18 +20,18 @@ Procedure HV;
 Procedure HT;
 Var s,r:real;
 Begin
-    Writeln('TINH DIEN TICH HINH TRON:');
-     writeln('     .. . . . ..         '); 
-     writeln('   .. . . . . . ..       ');
-     writeln(' .. . . . . . . . ..     ');
-     writeln('. . . . . . . . . . .    ');
-     writeln('. . . . . . . . . . .    ');
-     writeln('. . . . . . . . . . .    ');
-     writeln('. . . . . . . . . . .    ');
-     writeln('. . . . . . . . . . .    ');
-     writeln(' .. . . . . . . . ..     ');
-     writeln('   .. . . . . . ..       ');
-     writeln('     .. . . . ..         ');
+     Writeln('TINH DIEN TICH HINH TRON:');
+     writeln('     .. . . . ..         ');delay(300);  
+     writeln('   .. . . . . . ..       ');delay(300); 
+     writeln(' .. . . . . . . . ..     ');delay(300); 
+     writeln('. . . . . . . . . . .    ');delay(300); 
+     writeln('. . . . . . . . . . .    ');delay(300); 
+     writeln('. . . . . . . . . . .    ');delay(300); 
+     writeln('. . . . . . . . . . .    ');delay(300); 
+     writeln('. . . . . . . . . . .    ');delay(300); 
+     writeln(' .. . . . . . . . ..     ');delay(300); 
+     writeln('   .. . . . . . ..       ');delay(300); 
+     writeln('     .. . . . ..         ');delay(300); 
      Write('Nhap ban kinh R = ');readln(r);
      s:=pi*r*r;
      Writeln('Dien tich hinh tron = ',s:6:2);
@@ -40,11 +40,11 @@ Procedure TG;
 Var a, b, c, s, p, h:real;
     i,j:integer;
  Begin
-   Writeln('TINH DIEN TICH TAM GIAC:');
+    Writeln('TINH DIEN TICH TAM GIAC:');
     for i:=1 to 5 do
     begin
-    for j:=1 to 5-i do write(' ');
-    for j:=1 to i do write('.',' ');
+    for j:=1 to 5-i do write(' ');delay(300); 
+    for j:=1 to i do write('.',' ');delay(300); 
     writeln;
     end;
     Write('Nhap canh ben 1 neu khong co nhap = 0:');readln(a);
@@ -52,7 +52,7 @@ Var a, b, c, s, p, h:real;
     Write('Nhap canh day:');readln(c);
     write('Nhap duong cao:'); readln(h);
     If ((a+b)>c)and((b+c)>a)and((a+c)>b) then
-   Begin
+    Begin
          p:=(a+b+c)/2;
          s:=sqrt(p*(p-a)*(p-b)*(p-c)); end; begin s:=(h*c)/2; end;
          Writeln('Dien tich tam giac = ',s:4:2);
@@ -65,8 +65,8 @@ Begin
       For j:=1 to 1 do begin
       For i:=1 to 5 do begin write('.',' '); delay(300); end;
       Writeln;
-      For i:=1 to 5 do writeln('. . . . .');
-      For i:=1 to 5 do write('.',' ');
+      For i:=1 to 5 do writeln('. . . . .');delay(300); 
+      For i:=1 to 5 do write('.',' ');delay(300); 
       Writeln;
       Delay(500);
       end;
@@ -77,14 +77,15 @@ Begin
 End;
 procedure  HThang;
 Var a,b,c, S:real;
+    i, j:Integer;
 Begin
-     Writeln('TINH DIEN TICH HINH THANG:');
-     Writeln('     . . . . .     ');
-     Writeln('    . . . . . .    ');
-     Writeln('   . . . . . . .   ');
-     Writeln('  . . . . . . . .  ');
-     Writeln(' . . . . . . . . . ');
-     Writeln('. . . . . . . . . .');
+   Writeln('TINH DIEN TICH HINH THANG:');
+     for i:=1 to 5 do
+    begin
+    for j:=1 to 5-i do write(' ');delay(300); 
+    for j:=1 to i+3 do write('.',' ');delay(300); 
+    writeln;
+    end;
    write('nhap do dai cua day lon:');readln(a);
    write('nhap do dai cua day nho:');readln(b);
    write('nhap do dai cua chieu cao:');readln(c);
