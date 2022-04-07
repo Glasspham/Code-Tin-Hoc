@@ -11,7 +11,7 @@ Procedure HV;
 Procedure HT;
 Var s,r:real;
 Begin
-     Write('Nhap ban kinh R = ');readln(r);
+     Write('Nhap ban kinh R: ');readln(r);
      s:=pi*r*r;
      Writeln('Dien tich hinh tron = ',s:6:2);
 End;
