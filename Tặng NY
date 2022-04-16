@@ -1,0 +1,107 @@
+program tangqua;
+uses crt;
+type
+str79=string[79];
+var s,s2,ban1,ban2:string[79];
+stop:boolean;
+n,i:integer;
+Procedure heart;
+begin
+textcolor(lightred);
+Writeln(' ** ** * * * ');
+writeln(' * * * * * * * ');
+Writeln(' * * * * * ');
+writeln(' * * * ');
+writeln(' * * * ');
+writeln(' * * * ');
+writeln(' * * * ');
+writeln(' * * * * ');
+writeln(' * * * * ');
+writeln(' * * * * ');
+writeln(' * * ');
+end;
+Procedure load(t:integer); {thoi gian load(so giay), cho oai thoi chu chang
+chuc nang j ca hj` hj`}
+var i:integer;
+begin
+Write('Loading');
+for i:=1 to 10 do
+begin
+write('.');
+delay(t*100); {vi thoi gian cua ham delay la mili giay nen...tu => ra nhe'}
+end;
+write('100% Done!');
+clrscr;
+end;
+Procedure Cangiua(var s:str79);
+var i,n:integer;
+begin
+n:=length(s);
+n:=(80-n) div 2;
+for i:=1 to n do s:=' '+s;
+end;
+Procedure chu_chay(s:str79; var s2:str79);
+var i,n:integer;
+begin
+s2:=copy(s,2,length(s)-1)+s[1];
+end;
+Procedure chucmung(x,y:integer);
+begin
+Gotoxy(x,y); Writeln('_._');
+gotoxy(x,y+1);Write ('/ \');
+delay(300);
+Gotoxy(x+4,y); write('\./');
+Gotoxy(x+4,y+1); write('/ \');
+end;
+begin clrscr;
+Write('Nhập tên bạn: '); Readln(ban1);
+Write('Nhâp tên người ấy: '); Readln(ban2);
+S:=ban1+' want to say: I LOVE '+ban2;
+load(5);
+clrscr;
+cangiua(s);
+stop:=false;
+i:=1;
+textcolor(red);
+While i<=20 do
+begin
+delay(300);
+gotoxy(1,1);
+chu_chay(s,s2);
+s:=s2;
+write(s);
+i:=i+1;
+writeln;
+end;
+heart;
+i:=1; s:='';
+gotoxy(7,5);
+textcolor(lightblue);
+For i:=1 to length(ban1) do
+begin
+delay(300);
+Write(ban1[i]);
+end;
+gotoxy(23,5);
+Textcolor(red);
+for i:=1 to length(ban2) do
+begin
+delay(300);
+write(ban2[i]);
+end;
+gotoxy(23,5);
+Textcolor(yellow);
+for i:=1 to length(ban2) do
+begin
+delay(300);
+write(ban2[i]);
+end;
+gotoxy(1,15);
+n:=1; i:=15;
+chucmung(n,i); chucmung(n+8,i); chucmung(n+16,i);
+stop:=keypressed;
+writeln;
+Write(' Chuc ban hanh phuc ');
+if stop then exit;
+readln;
+end.
