@@ -8,17 +8,17 @@ n,i:integer;
 Procedure heart;
 begin
 textcolor(lightred);
-Writeln(' ** ** * * * ');
-writeln(' * * * * * * * ');
-Writeln(' * * * * * ');
-writeln(' * * * ');
-writeln(' * * * ');
-writeln(' * * * ');
-writeln(' * * * ');
-writeln(' * * * * ');
-writeln(' * * * * ');
-writeln(' * * * * ');
-writeln(' * * ');
+Writeln('      **       **  *       * *   ');
+writeln('    *   *   *     *  *  *     *  ');
+Writeln('  *       *        *   *       *  ');
+writeln('  *                *           *  ');
+writeln('   *               *           *  ');
+writeln('    *             *           *   ');
+writeln('     *           *          *     ');
+writeln('      *        * *        *       ');
+writeln('       *     *    *     *         ');
+writeln('        *  *       *  *           ');
+writeln('         *          *             ');
 end;
 Procedure load(t:integer); {thoi gian load(so giay), cho oai thoi chu chang
 chuc nang j ca hj` hj`}
