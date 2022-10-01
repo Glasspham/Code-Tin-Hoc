@@ -1,0 +1,44 @@
+function p5speechRecGotResult() {
+  background('#0000ff');
+  text((p5SpeechRec.resultString.toLowerCase()) , 100, 250);
+  if (new RegExp('đi'.split(",").map(function(item) {return item.trim();}).join("|")).test(p5SpeechRec.resultString.toLowerCase()) && new RegExp('tới,thẳng'.split(",").map(function(item) {return item.trim();}).join("|")).test(p5SpeechRec.resultString.toLowerCase())) {
+    parent.commandUtils.sendTerminalData('a');
+  }
+  if (new RegExp('đi'.split(",").map(function(item) {return item.trim();}).join("|")).test(p5SpeechRec.resultString.toLowerCase()) && new RegExp('lùi,lui'.split(",").map(function(item) {return item.trim();}).join("|")).test(p5SpeechRec.resultString.toLowerCase())) {
+    parent.commandUtils.sendTerminalData('b');
+  }
+  if (new RegExp('rẽ,qua'.split(",").map(function(item) {return item.trim();}).join("|")).test(p5SpeechRec.resultString.toLowerCase()) && new RegExp('trái'.split(",").map(function(item) {return item.trim();}).join("|")).test(p5SpeechRec.resultString.toLowerCase())) {
+    parent.commandUtils.sendTerminalData('c');
+  }
+  if (new RegExp('rẽ,qua'.split(",").map(function(item) {return item.trim();}).join("|")).test(p5SpeechRec.resultString.toLowerCase()) && new RegExp('phải'.split(",").map(function(item) {return item.trim();}).join("|")).test(p5SpeechRec.resultString.toLowerCase())) {
+    parent.commandUtils.sendTerminalData('d');
+  }
+
+}
+
+function p5speechRecOnEnd() {
+  p5SpeechRec.start();
+}
+
+function sleep(s) {
+  ms = s * 1000
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+
+let p5SpeechRec = new p5.SpeechRec("vi-VN", p5speechRecGotResult);
+p5SpeechRec.onEnd = p5speechRecOnEnd;
+
+function preload() {
+
+}
+
+function setup() {
+  createCanvas(window.parent.document.getElementById('js-runner-container').offsetWidth-50, window.parent.document.getElementById('js-runner-container').offsetHeight-50);
+    p5SpeechRec.start(); // start listening
+
+}
+
+function draw() {
+
+}
