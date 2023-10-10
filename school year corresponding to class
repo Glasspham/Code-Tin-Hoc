@@ -1,0 +1,22 @@
+#include <iostream>
+#include <iomanip>
+#include <typeinfo> 
+#include <cstdlib>
+#include <ctime>
+#include <random>
+#include <cstring>
+#include <array>
+#include <algorithm>
+#include <vector>
+#define _CRT_SECURE_NO_WARNINGS
+#define Max 10
+using namespace std;
+
+
+
+int main()
+{
+	cout << "Hello world";
+	system("pause");
+	return 0;
+}
